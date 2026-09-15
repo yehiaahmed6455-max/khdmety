@@ -1,0 +1,100 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --font-display: var(--font-display-family);
+  --font-body: var(--font-body-family);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-brand: var(--brand);
+  --color-clay: var(--clay);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+}
+
+:root {
+  --radius: 0.75rem;
+  --font-display-family: "Cairo", sans-serif;
+  --font-body-family: "Tajawal", sans-serif;
+
+  --paper: hsl(41 60% 97%);
+  --ink: hsl(210 30% 12%);
+  --brand: hsl(205 88% 46%);
+  --clay: hsl(22 72% 54%);
+
+  --background: hsl(41 60% 97%);
+  --foreground: hsl(210 30% 12%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(210 30% 12%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 30% 12%);
+  --primary: hsl(205 88% 46%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(41 40% 93%);
+  --secondary-foreground: hsl(210 30% 12%);
+  --muted: hsl(41 40% 93%);
+  --muted-foreground: hsl(210 15% 42%);
+  --accent: hsl(22 72% 54%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 72% 45%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 30% 12% / 0.1);
+  --input: hsl(210 30% 12% / 0.14);
+  --ring: hsl(205 88% 46%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body-family);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display-family);
+  }
+}
+
+@utility card-surface {
+  background-color: var(--color-card);
+  border-radius: 1rem;
+  box-shadow: 0 0 0 1px var(--color-border);
+}

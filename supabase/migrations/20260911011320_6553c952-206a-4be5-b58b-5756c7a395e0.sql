@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN links JSONB NOT NULL DEFAULT '[]'::jsonb;
